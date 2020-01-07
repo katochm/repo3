@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/getintodevops/masterclass-codeexamples/"
+    "url": "https://github.com/katochm/firstrepo/"
   },
   "keywords": [
     "node",
     "docker",
     "dockerfile"
   ],
-  "author": "miiro@getintodevops.com",
+  "author": "mukul.katoch@opcito.com",
   "license": "ISC",
   "devDependencies": { "test": ">=0.6.0" }
 }
