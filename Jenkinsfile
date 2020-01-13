@@ -3,22 +3,42 @@ pipeline {
 	stages {
 		stage('Checkout code from git repository') {
 			steps {
-				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'miniproject/complete']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Github', url: 'https://github.com/katochm/firstrepo.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Github', url: 'https://github.com/katochm/firstrepo.git']]])
 			}
 			
 		}
-		stage('maven version') {
+		stage('Maven version') {
 		    steps {
 		        sh 'mvn --version'
 		    }
 		}
-		stage('maven Build') {
-			steps {
-			    sh label: '', script: 'cd miniproject/complete/'
-				sh label: '', script: './mvnw package && java -jar target/gs-spring-boot-docker-0.1.0.jar'
-			}
-			
+		stage('Maven Build') {
+		    steps {
+		        sh 'mvn clean install'
+		    }
 		}
+		stage('Docker Build') {
+		    steps {
+		        sh 'docker build -t katochm/firstrepo:latest .'
+		    echo 'docker images is created'
+		    sh 'docker images'
+		    }
+		}
+		//stage('Push Docker Image') {
+		    //steps {
+		    	//withDockerRegistry(credentialsId: 'docker-hub-credentials', url: 'https://registry.hub.docker.com') {
+		    	//	sh 'docker push katochm/firstrepo:latest'    
+		    	//}
+		        
+	//	}
+	      
+		stage('Push Docker Image') {
+		    steps {
+		        sh 'docker login --username=katochm --password=Jack@1994'
+		        sh 'docker push katochm/firstrepo:latest'
+		    }
+		}	
 	}
+
 
 }
