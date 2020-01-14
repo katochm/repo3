@@ -32,8 +32,7 @@ pipeline {
 		stage('Push artifact to Nexus Repository') {
 			steps {
 				echo "Pushing artifacts........"
-				nexusArtifactUploader artifacts: [[artifactId: 'katochm/firstrepo', classifier: 'debug', file: '/var/lib/jenkins/workspace/pptest1/target/gs-spring-boot-docker-0.1.0.jar', type: 'jar']], credentialsId: 'nexus-creds', groupId: 'group', nexusUrl: 'localhost:8081/repository/test-repo/', nexusVersion: 'nexus3', protocol: 'http', repository: 'test-repo', version: 'Nexus/3.16.1-02 (OSS)'
-				echo "..........Artifacts pushed"			
+				nexusArtifactUploader artifacts: [[artifactId: 'gs-spring-boot-docker', classifier: '', file: '/var/lib/jenkins/workspace/pptest1/target/gs-spring-boot-docker-0.1.0.jar', type: 'jar']], credentialsId: 'nexus-creds', groupId: 'hosted', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test-repo', version: 'Nexus/3.16.1-02 (OSS)'				echo "..........Artifacts pushed"			
 			}
 		}
 		//stage('Push Docker Image') {
