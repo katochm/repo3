@@ -16,7 +16,7 @@ spec:
       - name: hello-deployment
         image: katochm/firstrepo:latest
         ports:
-        - containerPort: 8081
+        - containerPort: 9736
         command: ['sh', '-c', "java -jar /app.jar"]
  #     containers:
   #    - name: katacoda
