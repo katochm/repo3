@@ -17,11 +17,11 @@ pipeline {
 		        sh 'mvn --version'
 		    }
 		}
-		stage('Setting permission to jar') {
+		/*stage('Setting permission to jar') {
 			steps {
 				sh 'sudo chmod 777 /var/lib/jenkins/workspace/pptest3_master/target/gs-spring-boot-docker-0.1.0.jar'
 			}
-		}
+		}*/
 		stage('Docker Build') {
 		    steps {
 		        sh 'docker build -t katochm/firstrepo:latest .'
