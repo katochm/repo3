@@ -29,7 +29,7 @@ pipeline {
 		    sh 'docker images'
 		    }
 		}
-		stage('Harbor Push') {
+		/*stage('Harbor Push') {
 			steps {
 				echo "Docker Login"
 				sh 'docker images'
@@ -38,7 +38,7 @@ pipeline {
 				sh 'docker push 192.168.1.173/test1/katochm/firstrepo:latest'
 				echo "Image Pushed Successfully"
 			}
-		}
+		}*/
 		/*stage('Push artifact to Nexus Repository') {
 			steps {
 				echo "Pushing artifacts........"
