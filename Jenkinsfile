@@ -7,14 +7,14 @@ pipeline {
 			}
 			
 		}
-		/*stage('Maven version') {
-		    steps {
-		        sh 'mvn --version'
-		    }
-		}*/
 		stage('Maven Build') {
 		    steps {
 		        sh 'mvn clean install'
+		    }
+		}
+		stage('Maven version') {
+		    steps {
+		        sh 'mvn --version'
 		    }
 		}
 		stage('Setting permission to jar') {
