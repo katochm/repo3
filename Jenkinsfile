@@ -9,9 +9,9 @@ pipeline {
 		}
 		/*stage('Maven version') {
 		    steps {
-		        sh 'mvn --version'*/
+		        sh 'mvn --version'
 		    }
-		}
+		}*/
 		stage('Maven Build') {
 		    steps {
 		        sh 'mvn clean install'
