@@ -19,7 +19,7 @@ pipeline {
 		}
 		stage('Setting permission to jar') {
 			steps {
-				sh 'sudo chmod 777 /var/lib/jenkins/workspace/pptest1/target/gs-spring-boot-docker-0.1.0.jar'
+				sh 'sudo chmod 777 /var/lib/jenkins/workspace/pptest3/target/gs-spring-boot-docker-0.1.0.jar'
 			}
 		}
 		stage('Docker Build') {
