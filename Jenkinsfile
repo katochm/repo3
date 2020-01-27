@@ -55,12 +55,12 @@ pipeline {
 		        
 		//}
 	      
-		stage('Push Docker Image') {
+		/*stage('Push Docker Image') {
 		    steps {
 		        sh 'docker login --username=katochm --password=Jack@1994'
 		        sh 'docker push katochm/firstrepo:latest'
 		    }
-		}	
+		}	*/
 	}
 
 
