@@ -37,8 +37,9 @@ pipeline {
 				sh 'docker tag katochm/firstrepo:latest 192.168.1.173/test1/katochm/firstrepo:latest'
 				sh 'docker push 192.168.1.173/test1/katochm/firstrepo:latest'
 				echo "Image Pushed Successfully"
+				echo"nothing"
 			}
-		}*/
+		}*/ 
 		/*stage('Push artifact to Nexus Repository') {
 			steps {
 				echo "Pushing artifacts........"
