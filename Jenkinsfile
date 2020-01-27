@@ -27,7 +27,6 @@ pipeline {
 		        sh 'docker build -t katochm/firstrepo:latest .'
 		    echo 'docker images is created'
 		    sh 'docker images'
-		    echo "test"
 		    }
 		}
 		/*stage('Harbor Push') {
